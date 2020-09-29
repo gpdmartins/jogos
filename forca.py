@@ -5,14 +5,14 @@ def jogar():
     print("***Bem vindo ao jogo da Forca!***")
     print("*********************************")
 
-    arquivo = open("palavras.txt", "r")
-    palavras = []
+    with open("palavras.txt", "r") as arquivo:
+        palavras = []
 
-    for linha in arquivo:
-        linha = linha.strip()
-        palavras.append(linha)
+        for linha in arquivo:
+            linha = linha.strip()
+            palavras.append(linha)
 
-    arquivo.close()
+
 
     numero = random.randrange(0, len(palavras))
 
