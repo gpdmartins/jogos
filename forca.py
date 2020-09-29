@@ -5,7 +5,7 @@ def jogar():
 
     palavra_secreta = "banana".upper()
 
-    letras_acertadas = ["_","_","_","_","_","_"]
+    letras_acertadas = ["_" for letra in palavra_secreta]
     enforcou = False
     acertou = False
 
@@ -26,15 +26,15 @@ def jogar():
                 index = index + 1
         else:
             erros = erros+1
-
+            print("Ops, você errou! Faltam {} tentativas.".format(6 - erros))
         enforcou  = erros == 6
         acertou = "_" not in letras_acertadas
         print(letras_acertadas)
 
-        if (acertou):
-            print("Você ganhou")
-        else:
-            print("Você perdeu")
+    if (acertou):
+        print("Você ganhou")
+    else:
+        print("Você perdeu")
     print("Fim do Jogo")
 
 if(__name__ == "__main__"):
